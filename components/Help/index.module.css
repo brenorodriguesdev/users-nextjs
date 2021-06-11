@@ -1,0 +1,6 @@
+.containerHelp {
+    display: flex;
+    width: 30rem;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
+  }
