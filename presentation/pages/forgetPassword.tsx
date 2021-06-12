@@ -8,20 +8,19 @@ import {
   HelpComponent
 } from '../components'
 
-export default function Home() {
+export default function ForgetPasswordPage() {
   return (
     <MainComponent>
       <FormComponent>
-        <TitleComponent text="Login" />
+        <TitleComponent text="Recuperar Senha" />
         <InputComponent type="email" placeholder="Digite seu e-mail" />
-        <InputComponent type="password" placeholder="Digite sua senha" />
 
         <HelpComponent>
+          <LinkComponent text="Acessar sua conta?" />
           <LinkComponent text="Ainda não tem conta?" />
-          <LinkComponent text="Esqueceu sua senha?" />
         </HelpComponent>
 
-        <ButtonComponent text="Entrar" />
+        <ButtonComponent text="Recuperar" />
       </FormComponent>
     </MainComponent>
   )

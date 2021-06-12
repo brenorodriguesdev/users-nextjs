@@ -11,6 +11,6 @@ export class SignInService implements SignInUseCase {
             throw data 
         }
 
-        return data.accessToken
+        return data
     }
 }

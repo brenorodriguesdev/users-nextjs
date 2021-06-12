@@ -13,7 +13,7 @@ export class Axios implements HttpClient {
             const response = await api.post(this.route, body, { headers})
             return response.data
         } catch (error) {
-            return new Error(error.response.data.message)
+            return new Error(error.response.data)
         }
     }
 
@@ -26,7 +26,7 @@ export class Axios implements HttpClient {
             const response = await api.put(this.route, body, { headers})
             return response.data
         } catch (error) {
-            return new Error(error.response.data.message)
+            return new Error(error.response.data)
         }
     }
 
@@ -42,7 +42,7 @@ export class Axios implements HttpClient {
             })
             return response.data
         } catch (error) {
-            return new Error(error.response.data.message)
+            return new Error(error.response.data)
         }
     }
 }
