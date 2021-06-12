@@ -8,6 +8,17 @@
     font-weight: bold;
 }
 
+.buttonDisabled {
+    width: 20rem;
+    height: 2rem;
+    border-radius: 2.5px;
+    background-color: #555;
+    border: 1px solid #555;
+    color: white;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
 .button:hover {
     background-color: #666;
 }
