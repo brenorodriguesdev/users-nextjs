@@ -1,4 +1,4 @@
-import { SignInModel } from "../../domain/models/SignIn";
+import { SignInModel } from "../../domain/models/sign-in";
 import { SignInUseCase } from "../../domain/useCases/sign-in";
 import { HttpClient } from "../contracts/http-client";
 

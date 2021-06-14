@@ -1,4 +1,4 @@
-import { UserModel } from "../../domain/models/User";
+import { UserModel } from "../../domain/models/user";
 import { CreateUserUseCase } from "../../domain/useCases/create-user";
 import { HttpClient } from "../contracts/http-client";
 
