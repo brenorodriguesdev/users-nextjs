@@ -78,7 +78,7 @@ export default function SignUpPage({ validator, createUserUseCase }: SignUpProps
       validateName()
     }
 
-  }, [password])
+  }, [name])
 
 
   useEffect(() => {
