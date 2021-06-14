@@ -8,7 +8,8 @@ import {
   FormComponent,
   TitleComponent,
   MainComponent,
-  ErrorComponent
+  ErrorComponent,
+  SuccessComponent
 } from '../components'
 
 interface SignUpProps {
@@ -30,6 +31,7 @@ export default function SignUpPage({ validator, createUserUseCase }: SignUpProps
   const [initialEmail, setInitialEmail] = useState(false)
   const [initialPassword, setInitialPassword] = useState(false)
   const [initialPasswordConfirmation, setInitialPasswordConfirmation] = useState(false)
+  const [successMessage, setSuccessMessage] = useState('')
 
   const [mainError, setMainError] = useState('')
 
@@ -45,6 +47,7 @@ export default function SignUpPage({ validator, createUserUseCase }: SignUpProps
       })
 
       setMainError('')
+      setSuccessMessage('Parabéns, você foi cadastrado com sucesso!')
     }
     catch (error) {
       setMainError(error.message)
@@ -67,7 +70,7 @@ export default function SignUpPage({ validator, createUserUseCase }: SignUpProps
   }
 
   const validatePasswordConfirmation = () => {
-    const error = validator.validate({ password }, 'passwordConfirmation')
+    const error = validator.validate({ passwordConfirmation }, 'passwordConfirmation')
     setPasswordConfirmationError(error ? error.message : '')
   }
 
@@ -119,6 +122,7 @@ export default function SignUpPage({ validator, createUserUseCase }: SignUpProps
         <InputComponent type="password" placeholder="Confirme sua senha" onChange={(event: any) => { setPasswordConfirmation(event.target.value) }} onBlur={() => { setInitialPasswordConfirmation(true); validatePasswordConfirmation(); }} />
         {passwordConfirmationError ? <ErrorComponent text={passwordConfirmationError} /> : null}
         {mainError ? <ErrorComponent text={mainError} /> : null}
+        {mainError.length > 0 || <SuccessComponent text={successMessage} />}
         <ButtonComponent
           disabled={!name
             || !email
