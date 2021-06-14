@@ -18,8 +18,8 @@ interface SignUpProps {
 
 export default function SignUpPage({ validator, createUserUseCase }: SignUpProps) {
 
-  const [name, setName] = useState(' ')
-  const [email, setEmail] = useState(' ')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
   const [nameError, setNameError] = useState('')

@@ -20,7 +20,7 @@ interface SignInProps {
 
 export default function SignInPage({ signInUseCase, validator }: SignInProps) {
 
-  const [email, setEmail] = useState(' ')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [emailError, setEmailError] = useState('')
   const [passwordError, setPasswordError] = useState('')
