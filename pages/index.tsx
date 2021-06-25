@@ -1,10 +1,10 @@
 import { GetServerSideProps } from "next"
-import { redirect } from "next/dist/next-server/server/api-utils"
 import { parseCookies } from "nookies"
+import HomePage from "../presentation/pages/home"
 
 export default function Home() {
     return (
-        <h1>Teste</h1>
+        <HomePage />
     )
 }
 

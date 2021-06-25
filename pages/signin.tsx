@@ -11,15 +11,15 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { ['users.token']: token } = parseCookies(ctx)
 
   if (token) {
-      return {
-          redirect: {
-              destination: '/',
-              permanent: false
-          }
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
       }
+    }
   }
 
   return {
-      props: {}
+    props: {}
   }
 }
