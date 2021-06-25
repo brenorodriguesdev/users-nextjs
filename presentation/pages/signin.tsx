@@ -11,7 +11,8 @@ import {
 } from '../components'
 import { SignInUseCase } from '../../domain/useCases/sign-in'
 import { Validator } from '../../validation/contracts/validator'
-
+import { setCookie } from 'nookies'
+import { useRouter } from 'next/router'
 
 interface SignInProps {
   signInUseCase: SignInUseCase
@@ -19,7 +20,7 @@ interface SignInProps {
 }
 
 export default function SignInPage({ signInUseCase, validator }: SignInProps) {
-
+  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [emailError, setEmailError] = useState('')
@@ -36,6 +37,13 @@ export default function SignInPage({ signInUseCase, validator }: SignInProps) {
       })
 
       setMainError('')
+
+      setCookie(undefined, 'users.token', String(accessToken), {
+        maxAge: 60 * 60 * 24
+      })
+
+      router.push('/')
+      
     }
     catch (error) {
       setMainError(error.message)
